@@ -1,7 +1,4 @@
-# dsa210-project
-Dsa 210 Project 2026
-
-# DSA 210 Project
+# DSA 210 Project 2026
 
 ## Project Title
 Identifying the Key Factors That Maximize Fitness Performance Using Lifestyle and Workout Data
@@ -46,6 +43,7 @@ The following steps have been completed:
 - Data cleaning and preprocessing
 - Exploratory Data Analysis (EDA)
 - Hypothesis testing
+- Machine learning model implementation
 
 ## Variables Used
 
@@ -107,6 +105,67 @@ The following steps have been completed:
 ## Preliminary Findings
 The preliminary analysis suggests that sleep duration, age, and weight are significantly associated with fitness status. In contrast, workout frequency does not show a significant relationship with calories burned, and smoking status does not show a significant relationship with heart rate. Workout type appears to have a borderline relationship with calories burned, but it is not statistically significant at the 5% level.
 
+## Machine Learning Results
+
+### Classification Models
+Three classification models were applied to predict fitness status:
+- Logistic Regression
+- Random Forest Classifier
+- K-Nearest Neighbors (KNN)
+
+#### Logistic Regression
+- Accuracy: 0.7725
+- ROC AUC: 0.8459
+- Cross-Validation Accuracy: 0.788
+
+#### Random Forest Classifier
+- Accuracy: 0.7600
+- ROC AUC: 0.8119
+- Cross-Validation Accuracy: 0.7775
+
+#### KNN Classifier
+- Best k: 18
+- Accuracy: 0.7500
+- ROC AUC: 0.8059
+
+### Classification Conclusion
+Logistic Regression achieved the best classification performance among the tested models, with the highest accuracy, ROC AUC, and cross-validation accuracy.
+
+### Regression Models
+Two regression models were applied to predict calories burned:
+- Linear Regression
+- Random Forest Regressor
+
+#### Linear Regression
+- R²: 0.0047
+- RMSE: 316.79
+- Cross-Validation R²: -0.0055
+
+#### Random Forest Regressor
+- R²: -0.0269
+- RMSE: 321.79
+- Cross-Validation R²: -0.0348
+
+### Regression Conclusion
+The regression models did not perform well in predicting calories burned. The very low and negative R² values suggest that the selected variables were not sufficient to explain calorie expenditure accurately.
+
+## Feature Importance
+
+### Lifestyle Classification
+The most important variables for predicting fitness status were:
+- activity_index
+- nutrition_quality
+- age
+- smokes
+- sleep_hours
+
+### Fitness Regression
+The most important variables for predicting calories burned were:
+- BMI
+- Fat_Percentage
+- Session_Duration (hours)
+- Water_Intake (liters)
+
 ## Repository Contents
 - `dsa210_project.ipynb` — main project notebook
 - `gym_members_exercise_tracking_synthetic_data.csv` — workout dataset
@@ -117,4 +176,3 @@ The preliminary analysis suggests that sleep duration, age, and weight are signi
 1. Open the notebook in Jupyter Notebook or Google Colab.
 2. Make sure both CSV files are in the same directory as the notebook.
 3. Run all cells in order.
-   
